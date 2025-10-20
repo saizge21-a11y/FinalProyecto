@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FinalProyecto.Models.PAGOS_PRESTAMOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_PROGRAMADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERES_PROGRAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTADO_PAGO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_RECIBIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO_RECIBIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRESTAMOS.MONEDA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_PROGRAMADA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERES_PROGRAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTADO_PAGO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_RECIBIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO_RECIBIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRESTAMOS.MONEDA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PAGO_PRESTAMO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PAGO_PRESTAMO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PAGO_PRESTAMO })
+        </td>
+    </tr>
+}
+
+</table>

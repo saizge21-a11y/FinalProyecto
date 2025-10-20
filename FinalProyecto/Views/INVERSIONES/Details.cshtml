@@ -1,0 +1,82 @@
+﻿@model FinalProyecto.Models.INVERSIONES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>INVERSIONES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONEDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONEDA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLAZO_DIAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLAZO_DIAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_INICIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_INICIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_FINAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_FINAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TASA_INTERES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TASA_INTERES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODALIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODALIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USUARIOS.USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USUARIOS.USUARIO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_INVERSIONES }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

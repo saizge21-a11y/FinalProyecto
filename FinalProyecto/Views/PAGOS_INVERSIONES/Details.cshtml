@@ -1,0 +1,66 @@
+﻿@model FinalProyecto.Models.PAGOS_INVERSIONES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PAGOS_INVERSIONES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_PROGRAMADA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_PROGRAMADA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERES_PROGRAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERES_PROGRAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO_PAGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO_PAGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_RECIBIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_RECIBIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO_RECIBIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO_RECIBIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INVERSIONES.MONEDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INVERSIONES.MONEDA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PAGO_INVERSIONES }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
