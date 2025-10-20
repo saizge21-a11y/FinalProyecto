@@ -1,0 +1,21 @@
+﻿@model FinalProyecto.Models.USUARIOS
+@{
+    ViewBag.Title = "Perfil de usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm p-4">
+        <div class="d-flex align-items-center">
+            <div>
+                <h4>@Model.NOMBRE_COMPLETO</h4>
+                <small class="text-muted">@Model.CORREO_ELECTRONICO</small>
+            </div>
+        </div>
+        <hr />
+        <p><strong>Usuario:</strong> @Model.USUARIO</p>
+        <p><strong>Edad:</strong> @Model.EDAD</p>
+        <p><strong>DPI:</strong> @Model.DPI</p>
+        <p><strong>Correo:</strong> @Model.CORREO_ELECTRONICO</p>
+    </div>
+</div>

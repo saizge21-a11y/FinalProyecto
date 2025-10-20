@@ -1,13 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Security
+@{
+    var isLogged = User?.Identity?.IsAuthenticated ?? false;
+    var nombreMostrar = isLogged
+        ? (Session["NombreCompleto"] as string ?? User.Identity.Name)
+        : null;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - FinalProyecto</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,22 +24,46 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("FinalProyecto", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Entidades Financieras", "Index", "EntidadesFinancieras")</li>
+                    <li>@Html.ActionLink("Inversiones", "Index", "Inversiones")</li>
+                    <li>@Html.ActionLink("Préstamos", "Index", "Prestamos")</li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    @if (isLogged)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                @nombreMostrar <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Perfil", "Perfil", "Cuenta")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Cerrar sesión", "Logout", "Cuenta")</li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Iniciar sesión", "Login", "Cuenta")</li>
+                        <li>@Html.ActionLink("Registro", "Registro", "Cuenta")</li>
+                    }
                 </ul>
             </div>
         </div>
     </div>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Proyecto Final - Saúl George - Jonathan Díaz</p>
         </footer>
     </div>
 

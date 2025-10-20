@@ -1,0 +1,60 @@
+﻿@model FinalProyecto.Models.Login.RegisterViewModel
+@{
+    ViewBag.Title = "Registro de usuario";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+@if (ViewBag.Ok != null)
+{
+    <div class="alert alert-success">@ViewBag.Ok</div>
+}
+
+<form action="/Cuenta/Registro" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Usuario</label>
+        <input name="Username" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input name="Password" type="password" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Confirmar contraseña</label>
+        <input name="ConfirmPassword" type="password" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Nombre completo</label>
+        <input name="NombreCompleto" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Edad</label>
+        <input name="Edad" type="number" class="form-control" min="1" max="120" required />
+    </div>
+
+    <div class="form-group">
+        <label>Correo electrónico</label>
+        <input name="Correo" type="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>DPI</label>
+        <input name="Dpi" maxlength="13" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Registrar</button>
+
+    <div class="text-center mt-3">
+        <a href="/Cuenta/Login">Volver al inicio de sesión</a>
+    </div>
+</form>
