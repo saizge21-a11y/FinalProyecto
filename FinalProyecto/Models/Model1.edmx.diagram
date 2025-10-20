@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="248f504c845a433d82f1269f374798d1" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="Model.ENTIDADES_FINANCIERAS" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.INVERSIONES" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAGOS_INVERSIONES" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAGOS_PRESTAMOS" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRESTAMOS" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIOS" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ENTIDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_INVERSIONES" />
+        <AssociationConnector Association="Model.FK_PRESTAMOS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
